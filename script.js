@@ -1,21 +1,27 @@
-function yesClick() {
-    document.body.innerHTML = `
-        <div style="
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            font-size:32px;
-            font-family:Arial;
-            background:#f7c6d0;
-        ">
-            ❤️ Yayyy! You made my day ❤️
-        </div>
-    `;
-}
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
 
-function moveNo() {
-    const btn = document.querySelector('.no');
-    btn.style.left = Math.random() * 250 + "px";
-    btn.style.top = Math.random() * 40 + "px";
-}
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * 60;
+  const y = Math.random() * 60;
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "%";
+  noBtn.style.top = y + "%";
+});
+
+yesBtn.addEventListener("click", () => {
+  document.body.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#ffd1dc;
+      font-family:'Segoe UI',sans-serif;
+      text-align:center;
+    ">
+      <h1>Yayyy! 💖<br>You made my day 😍</h1>
+    </div>
+  `;
+});
